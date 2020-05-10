@@ -1,2 +1,1 @@
-# Algorithms-and-Data_Structures
-C++ codes.
+In this folder I will put my Algorithms and Data_Structures codes!
