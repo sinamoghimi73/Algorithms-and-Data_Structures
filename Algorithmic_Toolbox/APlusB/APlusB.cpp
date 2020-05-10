@@ -1,14 +1,16 @@
 #include <iostream>
 
+int Add(int *num1, int *num2){
+    return *num1 + *num2;
+}
+
 int main(){
 
-	int a,b,sum;
+    int a{},b{};
 
 	std::cin>>a>>b;
 
-	sum = a+b;
-
-	std::cout<<sum<<std::endl;
+	std::cout<< Add(&a, &b) <<std::endl;
 	
 	return 0;
 }
