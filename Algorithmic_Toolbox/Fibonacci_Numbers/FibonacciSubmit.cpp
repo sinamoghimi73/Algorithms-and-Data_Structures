@@ -1,33 +1,29 @@
 #include <iostream>
 
-long long Fib(int n){
-	long long Fib_Num;
+size_t Fib(int const *n) {
+  size_t Fib_Num{}, *Fn{&Fib_Num};
 
-	if (n <= 1){
-		Fib_Num = n;
-		return Fib_Num;
-	}
+  if (*n <= 1) {
+    return *n;
+  }
 
-	int Fib1 = 0;
-	int Fib2 = 1;
-	int Num = 0;
+  int Fib1{0}, *F1{&Fib1};
+  int Fib2{1}, *F2{&Fib2};
 
-	for (int i = 1; i < n; i++ ){
-		Num = Fib1 + Fib2;
-		Fib_Num = Num;
-		Fib1 = Fib2;
-		Fib2 = Num;
-	}
-	return Fib_Num;
+  for (int i = 1; i < *n; i++) {
+    *Fn = *F1 + *F2;
+    *F1 = *F2;
+    *F2 = *Fn;
+  }
+  return *Fn;
 }
 
-int main(){
+int main() {
 
-	int n = 0;
-	std::cin>>n;
+  int n{};
+  std::cin >> n;
 
-	std::cout << Fib(n) << std::endl;
+  std::cout << Fib(&n) << std::endl;
 
-
-	return 0;
+  return 0;
 }
