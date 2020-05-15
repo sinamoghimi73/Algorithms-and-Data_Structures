@@ -33,7 +33,7 @@ int main() {
   int n{0};
   std::cin >> n;
 
-  std::vector<int> vec(0);
+  std::vector<int> vec{};
   int num{0};
   for (int i = 0; i < n; i++) {
     std::cin >> num;
